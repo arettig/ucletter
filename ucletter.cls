@@ -54,6 +54,7 @@
 \newcommand{\ucl@fromaddr}{short}
 
 % Defaults are for the Computer Science Department at UCSC...
+\newcommand{\ucl@name}{}
 \newcommand{\ucl@univ}{UCSC}
 \newcommand{\ucl@campus}{Santa Cruz}
 \newcommand{\ucl@school}{Baskin School of Engineering}
@@ -74,6 +75,7 @@
 \newcommand{\ucl@pagetitle}{}
 
 % These commands show up in the return address, but NOT in the footer on each page
+\newcommand{\name}[1]{\renewcommand{\ucl@name}{#1}}
 \newcommand{\email}[1]{\renewcommand{\ucl@email}{#1}}
 \newcommand{\fax}[1]{\renewcommand{\ucl@fax}{#1}}
 
@@ -229,6 +231,7 @@
 \newcommand{\@ucaddress}{
   \begin{minipage}[t]{2.2in}
     \ifthenelse{\equal{\ucl@fromaddr}{full}}{
+      \ifthenelse{\equal{\ucl@name}{}}{}{\ucl@name\\}
       \ifthenelse{\equal{\ucl@dept}{}}{}{\ucl@dept\\}
       \ucl@school \\
       University of California \\
@@ -237,6 +240,7 @@
     }
     {}
     \ifthenelse{\equal{\ucl@fromaddr}{date}}{}{
+      \ifthenelse{\equal{\ucl@name}{}}{}{\ucl@name\\}
       \ifthenelse{\equal{\ucl@telephone}{}}{}{{\sc Phone:} \ucl@telephone\\}
       \ifthenelse{\equal{\ucl@fax}{}}{}{{\sc Fax:} \ucl@fax\\}
       \ifthenelse{\equal{\ucl@email}{}}{}{{\sc Email:} \ucl@email\\}
