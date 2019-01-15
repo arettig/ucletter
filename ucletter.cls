@@ -79,6 +79,18 @@
 \newcommand{\email}[1]{\renewcommand{\ucl@email}{#1}}
 \newcommand{\fax}[1]{\renewcommand{\ucl@fax}{#1}}
 
+\DeclareOption{ucb}{
+  \renewcommand{\ucl@univ}{UCB}
+  \renewcommand{\ucl@campus}{Berkeley}
+  \DeclareOption{chem}{
+    \dept{Department of Chemistry}
+    \renewcommand{\ucl@deptphone}{+1 (510) 642-5882}
+    \renewcommand{\ucl@deptfax}{}
+    \renewcommand{\ucl@school}{College of Chemistry}
+    \renewcommand{\ucl@univstreet}{419 Latimer Hall}
+    \renewcommand{\ucl@univtown}{Berkeley, CA 94720-1460}
+  }
+}
 
 \DeclareOption{ucsc}{
   \renewcommand{\ucl@univ}{UCSC}
